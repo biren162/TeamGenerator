@@ -1,0 +1,68 @@
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+  media="screen,projection" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  .txtArea {
+    height: 10%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  tr,
+  td {
+    padding: 0px;
+  }
+
+  .birenApp {
+    font-size: 30%;
+  }
+</style>
+<nav class="blue darken-4">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Random Team Generator</a>
+      <a class="button-collapse" data-activities="mobile-nav" href="#">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+
+        <li>
+          <a href="https://www.linkedin.com/in/biren162/">Contact</a>
+        </li>
+
+
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+
+        <li>
+          <a href="https://www.linkedin.com/in/biren162/">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+<br/>
+<!-- TEXTAREA -->
+<div class="birenApp">
+  <div>
+    <textarea [(ngModel)]="nameStr" class="txtArea" placeholder="Enter coma separated names" id="message"></textarea>
+  </div>
+
+  <a class="waves-effect waves-light btn center-align blue darken-1" (click)="formTheTeam()">Form Team</a>
+
+  <table class="highlight table">
+    <tr *ngFor="let name of namesRand; let i = index">
+      <td *ngIf="i%2==0">{{namesRand[i]}}</td>
+      <td *ngIf="i%2==0">{{namesRand[i+1]}}</td>
+    </tr>
+  </table>
+</div>
